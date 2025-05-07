@@ -1,0 +1,47 @@
+---
+layout: default
+title: اندیشه و معنا
+description: جایی برای تأملات فلسفی، تحلیل‌های سیاسی و روایت‌های فرهنگی
+---
+
+<header>
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.description }}</p>
+</header>
+
+<nav>
+  <a href="{{ '/' | relative_url }}">خانه</a>
+  <a href="{{ '/articles/' | relative_url }}">مقالات</a>
+  <a href="{{ '/theories/' | relative_url }}">نظریه‌ها</a>
+  <a href="{{ '/contact/' | relative_url }}">تماس</a>
+</nav>
+
+<main>
+  <section class="content">
+    {% for post in site.posts %}
+    <article class="post">
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <div class="date">{{ post.date | date: "%d %B %Y" }}</div>
+      <p>{{ post.excerpt }}</p>
+    </article>
+    {% endfor %}
+  </section>
+
+  <aside class="sidebar">
+    <h3>درباره من</h3>
+    <p>پژوهشگر حوزه فلسفه و علوم انسانی. تمرکز بر شناخت، سیاست، قدرت و معنا.</p>
+    <blockquote>«کلمات، نه فقط ابزار بلکه سازنده‌ی واقعیت‌اند.»</blockquote>
+    <h3>دسته‌بندی‌ها</h3>
+    <ul>{% for category in site.categories %}<li>{{ category[0] }}</li>{% endfor %}</ul>
+    <h3>پیوندها</h3>
+    <ul>
+      <li><a href="#">کتابخانه ملی ایران</a></li>
+      <li><a href="#">پروژه فلسفه معاصر</a></li>
+      <li><a href="#">مرکز پژوهش‌های انتقادی</a></li>
+    </ul>
+  </aside>
+</main>
+
+<footer>
+  طراحی با الهام از تفکر انتقادی – © {{ site.time | date: "%Y" }} اندیشه و معنا
+</footer>

@@ -1,0 +1,8 @@
+title: اندیشه و معنا
+description: جایی برای تأملات فلسفی، تحلیل‌های سیاسی و روایت‌های فرهنگی
+lang: fa
+markdown: kramdown
+permalink: /:title/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
